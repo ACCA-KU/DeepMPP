@@ -237,6 +237,7 @@ GAT_Multi:
   train_manager_class: Trainer
   description: "GAT Multi"
   version: "1.3"
+  
 ISAT_Multi:
   name: "ISAT_Multi1"
   network: ISAT_multi_test
@@ -248,3 +249,124 @@ ISAT_Multi:
   train_manager_class: Trainer
   description: "ISA Multi"
   version: "1.3"
+
+
+GCNwS_InterMap:
+  name: "GCNwithSolv_InterMap1"
+  network: GCNwithSolv_InterMap_model
+  data_manager_module: MolDataManager
+  data_manager_class: MolDataManager_withSolv
+  network_manager_module: NetworkManager
+  network_manager_class: NetworkManager
+  train_manager_module: TrainManager
+  train_manager_class: Trainer
+  description: "GCN with Solvent Interaction Map"
+  version: "1.0"
+
+MPNNwS_InterMap:
+  name: "MPNNwithSolv_InterMap1"
+  network: MPNNwithSolv_InterMap_model
+  data_manager_module: MolDataManager
+  data_manager_class: MolDataManager_withSolv
+  network_manager_module: NetworkManager
+  network_manager_class: NetworkManager
+  train_manager_module: TrainManager
+  train_manager_class: Trainer
+  description: "MPNN with Solvent Interaction Map"
+  version: "1.0"
+
+DMPNNwS_InterMap:
+  name: "DMPNNwithSolv_InterMap1"
+  network: DMPNNwithSolv_InterMap_model
+  data_manager_module: MolDataManager
+  data_manager_class: MolDataManager_withSolv
+  network_manager_module: NetworkManager
+  network_manager_class: NetworkManager
+  train_manager_module: TrainManager
+  train_manager_class: Trainer
+  description: "DMPNN with Solvent Interaction Map"
+  version: "1.0"
+
+GATwS_InterMap:
+  name: "GATwithSolv_InterMap1"
+  network: GATwithSolv_InterMap_model
+  data_manager_module: MolDataManager
+  data_manager_class: MolDataManager_withSolv
+  network_manager_module: NetworkManager
+  network_manager_class: NetworkManager
+  train_manager_module: TrainManager
+  train_manager_class: Trainer
+  description: "GAT with Solvent Interaction Map"
+  version: "1.0"
+
+AFPwS_InterMap:
+  name: "AFPwithSolv_InterMap1"
+  network: AFPwithSolv_InterMap_model
+  data_manager_module: MolDataManager
+  data_manager_class: MolDataManager_withSolv
+  network_manager_module: NetworkManager
+  network_manager_class: NetworkManager
+  train_manager_module: TrainManager
+  train_manager_class: Trainer
+  description: "AFP with Solvent Interaction Map"
+  version: "1.0"
+
+GCN_MolMerger:
+  name: "GCN_MolMerger1"
+  network: GCN_model
+  data_manager_module: MolMergerDataManager
+  data_manager_class: MolMergerDataManager
+  network_manager_module: NetworkManager
+  network_manager_class: NetworkManager
+  train_manager_module: TrainManager
+  train_manager_class: Trainer
+  description: "GCN with MolMerger"
+  version: "1.0"
+
+GAT_MolMerger:
+  name: "GAT_MolMerger1"
+  network: GAT_model
+  data_manager_module: MolMergerDataManager
+  data_manager_class: MolMergerDataManager
+  network_manager_module: NetworkManager
+  network_manager_class: NetworkManager
+  train_manager_module: TrainManager
+  train_manager_class: Trainer
+  description: "GAT with MolMerger"
+  version: "1.0"
+  
+MPNN_MolMerger:
+  name: "MPNN_MolMerger1"
+  network: MPNN_model
+  data_manager_module: MolMergerDataManager
+  data_manager_class: MolMergerDataManager
+  network_manager_module: NetworkManager
+  network_manager_class: NetworkManager
+  train_manager_module: TrainManager
+  train_manager_class: Trainer
+  description: "MPNN with MolMerger"
+  version: "1.0"
+
+DMPNN_MolMerger:
+  name: "DMPNN_MolMerger1"
+  network: DMPNN_model
+  data_manager_module: MolMergerDataManager
+  data_manager_class: MolMergerDataManager
+  network_manager_module: NetworkManager
+  network_manager_class: NetworkManager
+  train_manager_module: TrainManager
+  train_manager_class: Trainer
+  description: "DMPNN with MolMerger"
+  version: "1.0"
+
+AFP_MolMerger:
+  name: "AFP_MolMerger1"
+  network: AFP_model
+  data_manager_module: MolMergerDataManager
+  data_manager_class: MolMergerDataManager
+  network_manager_module: NetworkManager
+  network_manager_class: NetworkManager
+  train_manager_module: TrainManager
+  train_manager_class: Trainer
+  description: "AFP with MolMerger"
+  version: "1.0"

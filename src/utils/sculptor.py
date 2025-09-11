@@ -4,8 +4,6 @@ from rdkit import Chem
 import sys
 import os
 import pandas as pd
-import dgl
-import torch
 from . import PATH
 from .tools import showAtomHighlight
 import re
@@ -188,7 +186,7 @@ class Segmentator():
 
 
 class SubgroupSplitter(object):
-    def __init__(self, refer_path,
+    def __init__(self, refer_path=None,
                 split_order=6, 
                  combine_rest_order=1,  
                  absorb_neighbor_order=-1,  
@@ -198,8 +196,9 @@ class SubgroupSplitter(object):
                  draw=False,
                 get_index=False                
                 ):
-        
         #self.smiles_list = smiles_list
+        if refer_path is None:
+            refer_path = os.path.join(PATH.base_dir,"src/utils/functional_group.csv")
         path = os.path.join(refer_path)
         data_from = os.path.realpath(path)
         df = pd.read_csv(data_from, header=0)

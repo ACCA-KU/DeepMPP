@@ -59,17 +59,26 @@ def init_MODEL_DIR(config):
     return MODEL_DIR
     
 def get_network_refer(config):
+    NET_REFER = None
     if 'NET_REFER' in config:
         NET_REFER = config.pop('NET_REFER')
     elif os.path.exists(base_dir+"/network_refer.yaml"):
         NET_REFER = base_dir+"/network_refer.yaml"
+    
+    if NET_REFER is None:
+        raise Exception("Network refer file not found")
     return NET_REFER
 
 def get_frag_ref_path(config):
+    print(base_dir)
+    FRAG_REF = None
     if 'FRAG_REF' in config:
         FRAG_REF = config.pop('FRAG_REF')
     elif os.path.exists(base_dir+"/src/utils/functional_group.csv"):
         FRAG_REF = base_dir+"/src/utils/functional_group.csv"
+    
+    if FRAG_REF is None:
+        raise Exception("Fragment reference file not found")
     return FRAG_REF
     
 def get_NET_DIR(config):

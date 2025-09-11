@@ -55,7 +55,7 @@ class MolDataManager:
         self.unwrapper = self.dataset.unwrapper
 
     # Initialize the temporary data for the prediction
-    def init_temp_data(self,smiles_list):
+    def init_temp_data(self,smiles_list,**kwargs):
         self.molecule_smiles['compound'] = np.array(smiles_list)
         self.valid_smiles['compound'] = np.array(smiles_list)
         self.molecule_graphs={col:[] for col in self.molecule_columns}
@@ -263,7 +263,7 @@ class MolDataManager_withSolv(MolDataManager):
         self.dataset =GraphDataset_withSolv
         self.unwrapper = self.dataset.unwrapper
         
-    def init_temp_data(self,smiles,solvents):
+    def init_temp_data(self,smiles,solvents,**kwargs):
         self.molecule_graphs={col:[] for col in self.molecule_columns}
         self.molecule_smiles={'compound':np.array(smiles),'solvent':np.array(solvents)}
         self.valid_smiles={'compound':np.array(smiles),'solvent':np.array(solvents)}

@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import dgl
-
 class distGCN_layer(nn.Module):
     def __init__(self, in_feats, edge_feats, out_feats, activation, alpha = 0.1):
         super().__init__()

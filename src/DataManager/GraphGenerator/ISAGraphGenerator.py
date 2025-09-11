@@ -10,7 +10,7 @@ from D4CMPP.src.utils.featureizer import InvalidAtomError
 from D4CMPP.src.utils.sculptor import SubgroupSplitter
 
 class ISAGraphGenerator(MolGraphGenerator):
-    def __init__(self, frag_ref, sculptor_index):
+    def __init__(self, frag_ref=None, sculptor_index=(6,2,0)):
         self.sculptor = SubgroupSplitter(frag_ref,
                                         get_index=True,
                                         split_order=sculptor_index[0],

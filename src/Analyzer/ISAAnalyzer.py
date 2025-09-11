@@ -26,7 +26,7 @@ class ISAAnalyzer(MolAnalyzer):
         self.for_pickle = ['fragments', ]
         if getattr(self.tm,'get_score',None) is None:
             raise ValueError("This model does not support ISAAnalyzer.")
-    
+        self.is_score_by_group = True
 
     def check_score_by_group(self):
         if getattr(self.dm.gg,'sculptor',None) is None:
@@ -489,7 +489,7 @@ class ISAAnalyzer(MolAnalyzer):
         return score
     
     def get_group_score(self, smiles, score, frag=None):
-        if self.is_score_by_group:
+        if getattr(self,'is_score_by_group',None) is None:
             return score
         if frag is None:
             frag = self.get_fragment(smiles, get_index=True)

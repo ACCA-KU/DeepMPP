@@ -114,12 +114,14 @@ class AttentiveFP(nn.Module):
         for l in self.MultiTimeSteps:
             l.reset_parameters()
 
-    def forward(self, graph, node, edge):
+    def forward(self, graph, node, edge, **kwargs):
         with graph.local_scope():
             for i in range(len(self.PassingDepth)):
                 node = self.PassingDepth[i](graph, node, edge)
             
             graph.ndata['node_feats'] = node
+            if kwargs.get('only_atom', False):
+                return node, None
             super_node = dgl.sum_nodes(graph, 'node_feats')
 
             for i in range(len(self.MultiTimeSteps)):
